@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDemocrat, faRepublican } from "@fortawesome/free-solid-svg-icons";
 
-//Definicion del compotente
-const Form = ({ obtenerNombre, obtenerNombre2, eleccionSimboloDem, eleccionSimboloRep, onSubmit  }) => {
-
-
-
-  // Funcion para renderizar la proxima vista board
-// 1. asegurarse de obtener los tres valores que se requieren
-// 2. si eso es verdadero, entonces, renderizar Board
+//Definicion del componente
+const Form = ({
+  onBlur,
+  onClick,
+  onSubmit,
+}) => {
 
   return (
     <div className="container justify-content-center">
@@ -22,7 +20,7 @@ const Form = ({ obtenerNombre, obtenerNombre2, eleccionSimboloDem, eleccionSimbo
         1 inicia el juego
       </p>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="contenedor-inputs col">
           <div className="row gx-5">
             <div className="col">
@@ -31,7 +29,7 @@ const Form = ({ obtenerNombre, obtenerNombre2, eleccionSimboloDem, eleccionSimbo
                 name="name"
                 id="Jug1"
                 placeholder="Nombre jugador 1"
-                onBlur={obtenerNombre}
+                onBlur={onBlur[0]}
               />
             </div>
             <div className="col">
@@ -40,31 +38,33 @@ const Form = ({ obtenerNombre, obtenerNombre2, eleccionSimboloDem, eleccionSimbo
                 name="name2"
                 id="Jug2"
                 placeholder="Nombre jugador 2"
-                onBlur={obtenerNombre2}
+                onBlur={onBlur[1]}
               />
             </div>
           </div>
         </div>
 
-        <div className="divContenedorForm col-6">
+        <div className="divContenedorForm col-7">
           <button
-            onClick={(e) => eleccionSimboloDem(e)}
-            className="fs-1"
+            onClick={onClick[0]}
+            //className="fs-1"
             id="btnDem"
+            type="button"
           >
-            {" "}
+    
             <FontAwesomeIcon icon={faDemocrat} />
           </button>
           <button
-            onClick={(e) => eleccionSimboloRep (e)}
-            className="fs-1"
+            type="button"
+            onClick={onClick[1]}
+            //className="fs-1"
             id="btnRep"
           >
             <FontAwesomeIcon icon={faRepublican} />
           </button>
         </div>
 
-        <button onSubmit={onSubmit} type="submit" className="btn btn-lg" id="BtnForm">
+        <button type="submit" className="btn btn-lg" id="BtnForm">
           Enviar
         </button>
       </form>
@@ -77,8 +77,7 @@ Form.propTypes = {
   //obtenerNombre2: PropTypes.func.isRequired,
   eleccionSimboloDem: PropTypes.func,
   eleccionSimboloRep: PropTypes.func,
-  onSubmit: PropTypes.func.isRequired
-}
-  
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Form;

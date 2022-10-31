@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDemocrat, faRepublican } from "@fortawesome/free-solid-svg-icons";
 
-const Celda = () => {
-    return (
 
-        <button onClick={() => console.log("ME CLICKEARON")}></button>
-
-    );
-}
 
 export default Celda;

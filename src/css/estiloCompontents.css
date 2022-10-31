@@ -9,9 +9,9 @@ body {
 #root{
   height: 100vh;
   width: 100vw;
-  display: flex;
 }
 
+/* VISTA DEL FORMULARIO  */
 #h1Form,
 #pForm{
   color: white;
@@ -29,7 +29,7 @@ form {
   display: flex;
   flex-direction: column;
   position:relative;
-  margin-top: 50px;
+  margin-top: 70px;
   width: 70vw;
 }
 
@@ -83,39 +83,36 @@ outline-color:rgb(73, 70, 70);
  border: none;
  cursor: pointer;
  background-color: white;
- margin: auto;
-
+ font-size: 60px;
 }
 
-.contenedor-tabla{
-  width: 100vw;
-  height: 70vh;
-  margin: auto;
+#btnDem{
+  margin-right: 140px;
 }
+
+/* TABLA DE JUEGO */
 
 #table{
-  display:table;
+  display:flex;
+  flex-wrap: wrap;
   margin: auto;
   align-items: center;
-  height: 50vh;
- 
+  height: 450px;
+  width: 450px; 
+  justify-content: center;
+  
 }
 
-#row1,
-#row2,
-#row3{
-display: table-row;
 
-}
-
-.celdas{
-display: table-cell;
-padding: 12px;
+.celda{
 border: 2px solid #441f1e;
 border-width: 12px;
+box-sizing: border-box;
 text-align: center;
 color: rgb(251, 228, 228);
-font-size:x-large;
+font-size: 50px;
+width: 150px;
+height: 150px;
 
 }
 
@@ -123,22 +120,24 @@ font-size:x-large;
   text-align: center;
   color: white;
   margin-bottom: 50px;
+  margin-top: 100px;
 }
 
-.celdas:first-child{
-  border-left: none;
-}
-.celdas:nth-child(3){
-  border-right: none;
+#btn-reiniciar,
+#btn-empate{
+  margin-top: 10px;
+  background-color:#5A2726;
+  color: white;
+  border: solid 2px white;
+  margin-bottom: 50px;
+  margin-left: 870px;
 }
 
-#tRow1 .celdas{
-border-top: none;
-}
 
-#tRow3 .celdas{
-  border-bottom: none;
-  }
+
+
+
+
 
 
 
